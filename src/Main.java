@@ -10,9 +10,10 @@ public class Main {
                 2. Atomic integer
                 """);
 
-        var option = Integer.parseInt(new Scanner(System.in).nextLine());
+        System.out.print("Choice: ");
+        var choice = Integer.parseInt(new Scanner(System.in).nextLine());
 
-        if (option == 1) {
+        if (choice == 1) {
             runOrdinaryCounterScenario();
         } else {
             runAtomicCounterScenario();
