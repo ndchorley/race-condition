@@ -20,14 +20,6 @@ public class Main {
         }
     }
 
-    static int counter = 0;
-
-    private static void incrementCounterOneHundredThousandTimes() {
-        for (var i = 0; i < 100000; i++) {
-            counter++;
-        }
-    }
-
     private static void runOrdinaryCounterScenario() throws InterruptedException {
         var thread1 =
             Thread
@@ -45,11 +37,11 @@ public class Main {
         System.out.println("Final count: " + counter);
     }
 
-    private static AtomicInteger atomicCounter = new AtomicInteger(0);
+    static int counter = 0;
 
-    private static void incrementAtomicCounterOneHundredThousandTimes() {
+    private static void incrementCounterOneHundredThousandTimes() {
         for (var i = 0; i < 100000; i++) {
-            atomicCounter.incrementAndGet();
+            counter++;
         }
     }
 
@@ -68,5 +60,13 @@ public class Main {
         thread2.join();
 
         System.out.println("Final count: " + atomicCounter.intValue());
+    }
+
+    private static AtomicInteger atomicCounter = new AtomicInteger(0);
+
+    private static void incrementAtomicCounterOneHundredThousandTimes() {
+        for (var i = 0; i < 100000; i++) {
+            atomicCounter.incrementAndGet();
+        }
     }
 }
