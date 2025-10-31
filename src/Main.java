@@ -28,8 +28,15 @@ public class Main {
     }
 
     private static void runOrdinaryCounterScenario() throws InterruptedException {
-        var thread1 = Thread.ofVirtual().start(Main::incrementCounterOneHundredThousandTimes);
-        var thread2 = Thread.ofVirtual().start(Main::incrementCounterOneHundredThousandTimes);
+        var thread1 =
+            Thread
+                .ofVirtual()
+                .start(Main::incrementCounterOneHundredThousandTimes);
+
+        var thread2 =
+            Thread
+                .ofVirtual()
+                .start(Main::incrementCounterOneHundredThousandTimes);
 
         thread1.join();
         thread2.join();
@@ -46,8 +53,15 @@ public class Main {
     }
 
     private static void runAtomicCounterScenario() throws InterruptedException {
-        var thread1 = Thread.ofVirtual().start(Main::incrementAtomicCounterOneHundredThousandTimes);
-        var thread2 = Thread.ofVirtual().start(Main::incrementAtomicCounterOneHundredThousandTimes);
+        var thread1 =
+            Thread
+                .ofVirtual()
+                .start(Main::incrementAtomicCounterOneHundredThousandTimes);
+
+        var thread2 =
+            Thread
+                .ofVirtual()
+                .start(Main::incrementAtomicCounterOneHundredThousandTimes);
 
         thread1.join();
         thread2.join();
